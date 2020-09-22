@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaProsegur.Views.LoginPage"
+             BackgroundColor="Silver"
+             Title="{Binding Title}">
+
+    <StackLayout
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Padding="10">
+
+        <Frame
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            CornerRadius="30"
+            HasShadow="True">
+
+            <StackLayout
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+
+                <Label
+                    Text="Email"/>
+                <Entry
+                    Keyboard="Email"
+                    Placeholder="Introduce tu email..."
+                    Text="{Binding Email}"/>
+
+                <Label
+                    Text="Contraseña"/>
+                <Entry
+                    IsPassword="True"
+                    Placeholder="Introduce tu contraseña..."
+                    Text="{Binding Password}"/>
+
+                <ActivityIndicator
+                    
+                    IsRunning="{Binding IsRunning}"/>
+                <Button
+                    IsEnabled="{Binding IsEnabled}"
+                    Command="{Binding LoginCommand}"
+                    Text="Iniciar Sesión"/>
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>
